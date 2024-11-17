@@ -2,17 +2,15 @@
 
 import Image from "next/image";
 
-import Page2 from "./page2"
-
 // pages/index.js
 import { useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import styles from './styles.module.css'
 // Import shadcn/ui components as needed
 
-export default function Home() {
+export default function Page2() {
   const [query, setQuery] = useState('');
-  const [products, setProducts] = useState([]);
+  const [products, setcProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -43,8 +41,8 @@ export default function Home() {
     setLoading(true);
     setError(null);
     try {
-      /*TODO: Replace with actual API call
-      
+      // TODO: Replace with actual API call
+      /*
       const response = await fetch('/api/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -70,14 +68,14 @@ export default function Home() {
   };
 
   return (<>
-  <div id='test' className={ "bg-slate-100 min-h-screen flex flex-col items-center px-4 justify-center"}> {/*styles.frontierImage*/}
+  <div id='test' className={ "bg-slate-700 min-h-screen flex flex-col items-center px-4 justify-center"}> {/*styles.frontierImage*/}
     
-    <div className="w-16 h-16 border-0 border-white rounded items-center bg.white absolute top-0 left-0 justify-center">
-      <Image src="/site-logo-rebrand.svg" className="w-12 h-12" width={12} height={12}/>
+    <div className="w-16 h-16 border-2 border-black items-center bg.white absolute top-0 left-0 justify-center">
+      <Image src="/favicon.ico" className="w-12 h-12" width={12} height={12}/>
     </div>
     
     
-    <div className="w-full max-w-3xl">
+    <div className="w-full max-w-md">
       <div className={styles.frontierImage + " bg-[#ff3131] rounded-2xl w-300 h-168 text-center mb-6 border-2 border-black"}>
         {/*<h1 className="text-white text-3xl font-bold text-center mb-6">Frontier Communications</h1>*/}
       </div>
@@ -110,10 +108,7 @@ export default function Home() {
         </div>
       )}
     </div>
-    <div>
-               <Page2 />
-           </div>
+   
     </>
   );
 }
-
