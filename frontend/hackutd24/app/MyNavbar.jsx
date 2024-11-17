@@ -7,7 +7,8 @@ import { useState } from 'react';
 // Import shadcn/ui components as needed
 
 export default function MyNavbar() {
-    return <div className="w-full h-16 items-center bg-white absolute top-0 left-0 inline rounded border-1 border-white">
-      <Image src="/logo.svg" className="w-12 h-12" width={12} height={12}/>
+    return <div className="border-1 border-black rounded-3xl w-full h-16 bg-white absolute top-0 flex items-center">
+      <Image src="/logo.svg" className="w-12 h-12 mx-2 inline" width={12} height={12}/>
+      <h1 className="inline mx-auto text-2xl font-bold font-sans text-slate-600" >Here you can find what you need!</h1>
     </div>;
 }

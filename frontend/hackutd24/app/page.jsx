@@ -75,21 +75,20 @@ export default function Home() {
     <MyNavbar/>
     
     <div className="w-full max-w-3xl">
-        <Image src="/Title.png" className="rounded-2xl bg-white mb-6 border-2 border-black p-6" width={2560/5} height={1047/5}/>
+        <Image src="/Title.png" className="rounded-2xl bg-white mx-auto mb-6 border-2 border-black p-6" width={2560/5} height={1047/5}/>
         <form onSubmit={handleSearch} className="flex items-center">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="What are you looking for?"
-            className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full h-12 px-4 py-2 border border-gray-300 rounded-l-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
           <button
             type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Search
+            <Image src="/searchIcon.png" className="h-12 px-4 py-2 bg-slate-300 text-white rounded-r-2xl hover:bg-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-600" width={259/3} height={194/2}/>
           </button>
         </form>
         {loading && <p className="mt-4 text-center">Loading...</p>}
