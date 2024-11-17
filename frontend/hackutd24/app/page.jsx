@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import Page2 from "./page2"
-
+import MyNavbar from "./MyNavbar"
 // pages/index.js
 import { useState } from 'react';
 import ProductCard from '../components/ProductCard';
@@ -72,15 +72,10 @@ export default function Home() {
   return (<>
   <div id='test' className={ "bg-slate-100 min-h-screen flex flex-col items-center px-4 justify-center"}> {/*styles.frontierImage*/}
     
-    <div className="w-16 h-16 items-center bg-white absolute top-0 left-0 justify-center">
-      <Image src="/logo.svg" className="w-12 h-12" width={12} height={12}/>
-    </div>
-    
+    <MyNavbar/>
     
     <div className="w-full max-w-3xl">
-      <div className={styles.frontierImage + " bg-[#ff3131] rounded-2xl w-300 h-168 text-center mb-6 border-2 border-black"}>
-        {/*<h1 className="text-white text-3xl font-bold text-center mb-6">Frontier Communications</h1>*/}
-      </div>
+        <Image src="/Title.png" className="rounded-2xl bg-white mb-6 border-2 border-black p-6" width={2560/5} height={1047/5}/>
         <form onSubmit={handleSearch} className="flex items-center">
           <input
             type="text"
