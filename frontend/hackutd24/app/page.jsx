@@ -68,40 +68,42 @@ export default function Home() {
   };
 
   return (<>
-  <Image src="/favicon.ico" className="w-24 h-24 border-2 border-black float-left" width={24} height={24}/>
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center px-4">
-      <div className="w-full max-w-md">
-        <div className={styles.frontierColor + " rounded-2xl w-full h-full text-center mb-6 border-2 border-black"}>
-          <h1 className="text-white text-3xl font-bold text-center mb-6">Frontier Communications</h1>
+  <div className={styles.frontierBackgroundColor + "min-h-screen flex flex-col items-center px-4 justify-center"}>
+    <Image src="/favicon.ico" className="w-24 h-24 border-2 border-black float-left" width={24} height={24}/>
+      <div className="justify-center">
+        <div className="w-full max-w-md">
+          <div className={styles.frontierColor + " rounded-2xl w-full h-full text-center mb-6 border-2 border-black"}>
+            <h1 className="text-white text-3xl font-bold text-center mb-6">Frontier Communications</h1>
+          </div>
+          <form onSubmit={handleSearch} className="flex items-center">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="What are you looking for?"
+              className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Search
+            </button>
+          </form>
+          {loading && <p className="mt-4 text-center">Loading...</p>}
+          {error && <p className="mt-4 text-center text-red-500">{error}</p>}
         </div>
-        <form onSubmit={handleSearch} className="flex items-center">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="What are you looking for?"
-            className="w-full px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Search
-          </button>
-        </form>
-        {loading && <p className="mt-4 text-center">Loading...</p>}
-        {error && <p className="mt-4 text-center text-red-500">{error}</p>}
-      </div>
 
-      {/* Product Cards */}
-      {products.length > 0 && (
-        <div className="mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-4xl">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      )}
+        {/* Product Cards */}
+        {products.length > 0 && (
+          <div className="mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-4xl">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
     </>
   );
