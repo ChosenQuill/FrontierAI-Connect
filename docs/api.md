@@ -38,7 +38,7 @@ Output: string
           {
             "product_recommendation": {
               "product_name": "Fiber 1 Gig",
-              "features": "1Gbps Connection with one standard Wi-Fi router to support high usage.",
+              "features": "1Gbps Connection with one standard Wi-Fi router to support high usage.", 
               "price": "$65/mo"
             }
           }
