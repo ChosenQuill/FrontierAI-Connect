@@ -5,6 +5,7 @@ import { useState } from 'react';
 import MyNavbar from "./MyNavbar";
 import ProductCard from '../components/ProductCard';
 import { getRecommendations } from '../services/api';
+import Metadata from './Metadata';
 
 export default function Home() {
   const [question, setQuestion] = useState('');
@@ -31,6 +32,7 @@ export default function Home() {
 
   return (
     <>
+    <Metadata seoTitle={"FrontierAI"} seoDescription={"Connecting you through global internet."} />
       <div className="bg-slate-100 min-h-screen flex flex-col items-center px-4 justify-center">
         <MyNavbar />
         <div className="w-full max-w-3xl">

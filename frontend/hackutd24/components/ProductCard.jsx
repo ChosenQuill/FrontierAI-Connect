@@ -1,5 +1,3 @@
-// components/ProductCard.jsx
-
 import React from 'react';
 
 const ProductCard = ({ product }) => {
@@ -10,6 +8,11 @@ const ProductCard = ({ product }) => {
       <div className="mt-4">
         <span className="text-green-600 font-bold">{product.price}</span>
       </div>
+      <button 
+        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      >
+        Buy
+      </button>
     </div>
   );
 };
