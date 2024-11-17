@@ -7,8 +7,17 @@ import os
 from dotenv import load_dotenv
 import openai  # Ensure you have the openai package installed
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Replace "*" with your frontend's URL in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load environment variables from .env file
 load_dotenv()
@@ -77,7 +86,7 @@ def create_prompt(user_info, question):
             "You are an AI assistant for Frontier Communications. "
             "Based on the user's account information and their question, "
             "provide personalized recommendations for products and solutions. "
-            "Use the product catalog provided. Respond in JSON format."
+            "Use the product catalog provided. PROVIDE ONLY JSON OUTPUT. "
         )
     }
 
@@ -119,7 +128,7 @@ Provide recommendations as a JSON array of objects with the following fields:
 - solutions: An array of possible solutions or tips.
 - product_recommendation (optional): An object with product_name, features, price if a product is recommended.
 
-Ensure the response is in valid JSON format.
+PROVIDE ONLY JSON OUTPUT. NO TEXT, JUST JSON.
 """
     }
 
