@@ -72,8 +72,8 @@ export default function Home() {
   return (<>
   <div id='test' className={ "bg-slate-100 min-h-screen flex flex-col items-center px-4 justify-center"}> {/*styles.frontierImage*/}
     
-    <div className="w-16 h-16 border-0 border-white rounded items-center bg.white absolute top-0 left-0 justify-center">
-      <Image src="/site-logo-rebrand.svg" className="w-12 h-12" width={12} height={12}/>
+    <div className="w-16 h-16 items-center bg-white absolute top-0 left-0 justify-center">
+      <Image src="/logo.svg" className="w-12 h-12" width={12} height={12}/>
     </div>
     
     
