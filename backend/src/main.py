@@ -12,7 +12,7 @@ app = FastAPI()
 
 # Load environment variables from .env file
 load_dotenv()
-api_key = os.getenv("SAMBANOVA_API_KEY")
+api_key = os.getenv("SAMBA_API_KEY")
 if not api_key:
     raise ValueError("API key not found. Please ensure your .env file contains 'SAMBANOVA_API_KEY'.")
 
@@ -143,7 +143,7 @@ async def generate_recommendations(user_info, question):
         raise e
 
     # Extract the assistant's reply
-    reply = response.choices[0].message.content
+    reply = response.choices[0].message.content.replace('`','')
 
     # Parse the JSON response
     try:
