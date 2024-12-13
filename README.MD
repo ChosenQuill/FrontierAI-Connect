@@ -6,7 +6,7 @@ Our team developed this project as part of the **HackUTD24 hackathon challenge**
 
 ## Demo Video
 
-https://github.com/user-attachments/assets/6b15f25a-d2d3-48dd-9805-e01d6bf4e70a
+https://github.com/user-attachments/assets/e724dcf3-4939-4204-bfed-fa393975ff9a
 
 ## Project Goals & Reasoning
 
