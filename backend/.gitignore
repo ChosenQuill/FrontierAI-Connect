@@ -1,2 +1,2 @@
 *.env
-*current_customers.csv
+__pycache__
